@@ -18,12 +18,12 @@ end
 def fibs_rec(n, arr = [])	
 	if arr[n - 1].nil? && n > 0	# eliminates redundant assignment if the array index already has value
 		if n >= 3
-			arr[n - 1] = fibs_rec(n - 1, arr)[n - 2] + fibs_rec(n - 2, arr)[n - 3]
+			arr << fibs_rec(n - 1, arr)[n - 2] + fibs_rec(n - 2, arr)[n - 3]
 		elsif n == 2
-			arr[1] = 1
-			arr[0] = 0
+			arr << 0
+			arr << 1
 		elsif n == 1
-			arr[0] = 0
+			arr << 0
 		end
 	end	
 	arr
